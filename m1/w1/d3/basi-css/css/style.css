@@ -1,0 +1,64 @@
+/*
+Anatomia di un blocco di css
+selettore{
+    proprietà/regole:valore;
+    proprietà/regole:valore;
+    proprietà/regole:valore;
+    proprietà/regole:valore;
+    proprietà/regole:valore;
+    proprietà/regole:valore;
+}
+*/
+div{
+    color: red;
+}
+
+div{/*peso: 1 => tag*/
+    color: green;
+}
+
+.testoblu{ /*peso: 10 => classe*/
+    color: blue
+}
+
+#parola{/*Peso: 100 => id*/
+    font-weight: bold;
+    color: purple;
+}
+
+/* selezione multipla, e gerarchica*/
+
+
+div div, div span{/* 1 + 1 = 2, 1 + 1 = 2  */
+    background-color: bisque;
+}
+
+#menu li{
+    background-color:red;
+}
+#menu li > ul li{
+    background-color:yellow;
+}
+
+*{
+    font-size: 1rem;
+}
+
+
+/*
+Posso selezionare utilizzando più classi ed id per migliorare la specificità
+ul#menu.classe-prova.classe-prova2{
+    
+}
+*/
+
+.quadrati-gialli.quadrati-con-bordo div{/*peso 10 + 10 +1*/
+    background-color:purple;
+    border: 1px solid #000;
+}
+.quadrati-gialli div{/*peso 10 + 1*/
+    width: 100px;
+    height: 100px;
+    background-color:yellow;
+}
+

@@ -1,0 +1,26 @@
+.check:checked + p{
+    background-color: yellow
+}
+
+.bottone + p{
+    border: 1px solid #000
+}
+
+.mouse:hover{
+    background-color: bisque
+}
+
+.mouse2:hover a{
+    color: red;
+}
+
+table tr:nth-of-type(odd){
+    background-color:grey
+}
+table tr:last-child td:nth-of-type(1){
+    color:white
+}
+
+table td::after{
+    content: ">>>>>"
+}
