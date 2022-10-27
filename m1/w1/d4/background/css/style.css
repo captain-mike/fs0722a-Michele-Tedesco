@@ -1,0 +1,66 @@
+.quadrato{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+
+#img-adattata img{
+    max-width: 100%;
+}
+/*
+img{
+    max-width: 100%;
+}
+*{
+    box-sizing:border-box;
+}
+*/
+
+#img-tagliata{
+    overflow: hidden;
+}
+#img-tagliata img{
+    width: 200px;
+    margin-left: -50px;
+    margin-top: -5px;
+}
+
+
+#bg-adattato{
+    background-image: url(../img/download1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#bg-tagliato{
+    background-image: url(../img/download1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#bg1{
+    background-image: url(../img/guida-html5-1200x1200.png);
+    background-size: 40px;
+    background-position: center;
+}
+#bg2{
+    background-image: url(../img/guida-html5-1200x1200.png), url(../img/680323120190417827573.png);
+    background-size: 40px;
+    background-position: 0 58px, 58px 0;
+    background-repeat: repeat-x, repeat-y;
+}
+
+
+section{
+    height: 500px;
+    background-image: url(../img/download1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#grad1{
+    background-image: linear-gradient(30deg,red 0 10%, blue 50% 60%, yellow 60% 100%);
+    box-shadow: 3px 1px 10px #000, 30px 10px 10px rgb(255, 0, 0), 40px -10px 10px rgb(221, 255, 0);
+    margin-bottom:10px
+}
