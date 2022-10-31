@@ -11,19 +11,20 @@
     <script>
 
         var html = '<div class="prova">Mi piace l\'html</div>';
-        document.write(html)
+        document.write(html);
 
         var html2 = "<div class=\"prova\">Prova2</div>";
-        console.log(html2)
+        console.log(html2);
 
 
         /* interpolazione / template string */
         
-        console.log(nome)//per effetto dell'hoisting mi da undefined, anzichè un errore poichè la variabile esiste in una riga successiva
+        console.log(nome);//per effetto dell'hoisting mi da undefined, anzichè un errore poichè la variabile esiste in una riga successiva
         var nome = 'Mario';
 
-        console.log( 'Benevenuto ' + nome + ', come stai?' )
-        console.log(`Benvenuto ${nome}, come stai?`)
+        console.log( 'Benevenuto ' + nome + ', come stai?' );
+        console.log( "Benevenuto " + nome + ", come stai?" );
+        console.log(`Benvenuto ${nome}, come stai?`);
 
     </script>
     
