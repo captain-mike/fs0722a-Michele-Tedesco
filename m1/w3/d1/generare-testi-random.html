@@ -46,9 +46,9 @@
             
             for(let comment of comments){
 
-                let rand1 = randomNumber(ringraziamenti.length);
-                let rand2 = randomNumber(punti.length);
-                let rand3 = randomNumber(smyle.length);
+                let rand1 = rand(ringraziamenti.length);
+                let rand2 = rand(punti.length);
+                let rand3 = rand(smyle.length);
 
                 let nome = comment.querySelector('b').textContent.split(' ')[0];
 
@@ -57,8 +57,8 @@
 
         })
 
-        function randomNumber(max){
-            return Math.floor(Math.random() * max)
+        function rand(max){
+            return Math.floor(Math.random() * max) + 1
         }
     </script>
 </body>
