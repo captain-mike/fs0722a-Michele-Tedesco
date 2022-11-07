@@ -41,11 +41,7 @@
                     street: "Victor Plains",
                     suite: "Suite 879",
                     city: "Wisokyburgh",
-                    zip: "90566-7771",
-                    "geo": {
-                        "lat": "-43.9509",
-                        "lng": "-34.4618"
-                    }
+                    zip: "90566-7771"
                 },
                 phone: "010-692-6593 x09125",
                 website: "anastasia.net",
@@ -65,10 +61,6 @@
                     suite: "Suite 847",
                     city: "McKenziehaven",
                     zip: "59590-4157",
-                    "geo": {
-                        "lat": "-68.6102",
-                        "lng": "-47.0653"
-                    }
                 },
                 phone: "1-463-123-4447",
                 website: "ramiro.info",
@@ -80,9 +72,48 @@
             },
         ]
 
-        function trovaElimina(testo, array) {
+            console.log(utenti[1]['id'])
 
+        function trovaElimina(chiave,valore, array) {
+            let arrayCopy = [...array]//creo array copia per non intaccare l'originale
+            let indice = arrayCopy.findIndex((e)=> e[chiave] == valore);//trovo l'indice
+            arrayCopy.splice(indice,1);
+            return arrayCopy;
         }
+
+        let utentiNew = trovaElimina('name','Leanne Graham',utenti);
+        console.log(utentiNew, utenti);
+
+
+        
+        function trovaEliminaFind(chiave,valore, array) {
+           return array.filter((e)=> e[chiave] != valore);//elimino per esclusione
+        }
+        let utentiNew2 = trovaEliminaFind('website','ramiro.info',utenti);
+        console.log(utentiNew2);
+
+
+        let idAlto = utenti.reduce((previous,current)=> {
+            if(previous.id > current.id){
+                return previous;
+            }else{
+                return current;
+            }
+        })
+
+        console.log(idAlto)
+        
+        let idBasso = utenti.reduce((previous,current)=> (previous.id < current.id) ? previous : current);
+        console.log(idBasso);
+
+
+        let numeri = [10,50,90,80,663];
+        let somma = numeri.reduce((p,c)=>{
+            console.log(`${p} + ${c} = ` + (p+c));
+            return p + c;
+        });
+        
+
 
     </script>
 </body>
