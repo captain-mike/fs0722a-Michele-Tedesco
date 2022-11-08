@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class Veicolo{
+
+            constructor(nruote = 2, cambio = 'marce', maxVel = 0){
+                this.nruote = nruote;
+                this.cambio = cambio;
+                this.maxVel = maxVel;
+                this.vel = 0;
+            }
+
+            static checkWheelsNumber(){
+                return 'i veicoli hanno 2 ruote';
+            }
+
+            accelera(n = 1){
+                this.vel += n;
+            }
+            
+            frena(){
+                this.vel--;
+            }
+
+            stop(){
+                if(this.vel == 1){
+                    this.vel = 0;
+                }
+            }
+
+        }
+
+        console.log(Veicolo.checkWheelsNumber());//statico, quindi devo chiamarlo dal nome della classe
+
+        let veicoloObj = new Veicolo();
+        veicoloObj.accelera();//non statico, devo prima creare un'istanza
+
+
+        class Bici extends Veicolo{
+
+                constructor(){
+                    super(2, 'marce', 40)
+                } 
+
+                hasCasters(bool = false){
+                    if(bool){
+                        this.nruote += 2;
+                    }
+                }
+        }
+
+        let bike = new Bici()
+        bike.accelera()//+1
+        bike.accelera(5)//+5
+        bike.frena()//-1
+        console.log(bike)
+        
+        let miniBike = new Bici()
+        miniBike.hasCasters(true);
+        console.log(miniBike)
+
+
+        //esempio di metodo statico che abbiamo già usato
+        Array.isArray()//è un metodo statico perchè non devo obbligatoriamente scrivere new Array() per usarlo
+
+
+
+
+    </script>
+</body>
+</html>

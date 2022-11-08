@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let objOld = new Object();
+        let obj = {};//da preferire
+
+        {
+
+            let persona = {
+                nome: 'Mario',
+                cognome: 'Rossi',
+                anni: 30
+            }
+
+            function Persona(n, c) {
+                this.nome = n;
+                this.cognome = c;
+                this.cittadinanza = 'Italiana';
+                this.presentazione = () => {
+                    console.log(`Ciao, mi chiamo ${this.nome} ${this.cognome}`);
+                }
+            }
+
+            let mario = new Persona();//non inserisco dati perchè li voglio mettere dopo
+            mario.nome = 'Mario';
+            mario.cognome = 'Rossi';
+            console.log(mario);
+            mario.presentazione();
+
+            let lorenzo = new Persona('Lorenzo', 'Trozzo');//passo immediatamente i valori in fase di istanziamento
+            console.log(lorenzo);
+            lorenzo.presentazione();
+        }
+        console.log('======================================');
+        console.log('======================================');
+        console.log('======================================');
+        console.log('======================================');
+        {
+            //utilizzo di class
+
+            class Utente{
+
+                //il constructor serve a definire e valorizzare le proprietà di un oggetto
+                constructor(n,c,u = 'Utente'){
+                    this.nome = n;
+                    this.cognome = c;
+                    this.ruolo = u;
+
+
+                    //esperimenti fatti assieme
+                    console.log(`Il nuovo utente ${n} ${c} è stato creato`);//tutto ciò che si trova tra le parentesi graffe del constructor viene eseguito in fase di instanziamento
+
+                    this.presentazione()//in fase di istanziamento lancio il metodo presentazione
+                }
+                
+                presentazione(){//la parola chiave function non va messa
+                    console.log(`Ciao, mi chiamo ${this.nome} ${this.cognome}`);
+                }
+
+            }
+
+            let mario = new Utente('Mario','Rossi');
+            let lorenzo = new Utente('Lorenzo','Trozzo');
+            console.log(mario);
+            mario.presentazione();
+
+
+            class Admin extends Utente{
+
+                constructor(n, m, t){
+                    super(n,m,'Admin');//richiamo il costruttore della classe utente
+                    this.titolo = t;
+                }
+
+            }
+
+            let Amministratore = new Admin('Lorenzo', 'Trozzo','Capo dell\'universo');
+            console.log(Amministratore);
+            let Amministratore2 = new Admin('Raffaele', 'Caravetta','Capo del capo dell\'universo');
+            console.log(Amministratore2);
+            Amministratore2.presentazione();
+
+            //questo sotto è solo un separatore
+            console.log('%c ========================================','background-color:red')
+
+
+            class SuperAdmin extends Admin{
+
+                constructor(n,m){
+                    super(n,m,'dev')
+                }
+
+            }
+
+            let superAmministratore = new SuperAdmin('Valerio','Pirolli')
+            console.log(superAmministratore)
+
+        }
+
+    </script>
+</body>
+
+</html>
