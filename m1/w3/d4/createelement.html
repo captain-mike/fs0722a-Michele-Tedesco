@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="target"></div>
+    <button id="elimina">Elimina</button>
+
+    <div id="box">testo del div <span>Testo dello span</span></div>
+    
+    <script>
+
+        //seleziono l'area in cui creare elementi dom
+        let target = document.getElementById("target");
+
+        //creo un div
+        let div = document.createElement("div");
+        //creo un textnode per il div
+        let divText = document.createTextNode("Elemento creato da js");
+        //oppure va benissimo div.textContent = "Prova";
+
+        //se ho creato il textnode per il div devo usare un metodo come append per inserirlo nel div stesso
+        div.append(divText);
+        //scrivo il div nella pagina
+        target.append(div);
+
+
+        //eliminazione di un elemento
+        let elimina = document.querySelector('#elimina');
+        elimina.addEventListener('click',()=>div.remove())
+
+
+
+
+        //navigare tra i node e textnode per recuperarne il contenuto
+        let box = document.getElementById("box");
+        console.log(box.innerHTML)//prelevo tutto l'html dentro l'oggetto
+        console.log(box.innerText)//prelevo il testo del div e dei figli
+        console.log(box.textContent)//prelevo il testo del div e dei figli
+
+        console.log(box.childNodes[0].textContent)//prelevo solo il testo contenuto nel parent
+        console.log(box//parto dal div
+        .childNodes[1]//richiedo la lista dei child, ed affero il secondo
+        .firstChild//dato che il secondo ha un solo figlio, decido di procedere selezionandolo con firstChild
+        .textContent)//recupero il textcontent del textnode(ossia il contenuto testuale di span)
+
+
+    </script>
+</body>
+</html>
